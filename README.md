@@ -2,6 +2,8 @@
 
 - https://www.w3resource.com/mysql/mysql-full-text-search-functions.php
 - https://database.guide/how-the-match-function-works-in-mysql/
+- https://packagist.org/packages/smalot/pdfparser
+- https://www.pdfparser.org/documentation
 - **ADD FULLTEXT**
 
 # `search_modifier`
