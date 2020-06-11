@@ -1,7 +1,8 @@
-<pre>
 <?php
     require 'functions.php';
     require 'vendor/autoload.php';
+
+    Tracy\Debugger::enable();
 
     $parser = new \Smalot\PdfParser\Parser();
     $pdf    = $parser->parseFile('pdf/lorem-ipsum.pdf');
@@ -14,7 +15,7 @@
     ];
 
     //var_dump(insert('pdf_search', $arr));
-    // var_dump(selectAll());
+    dump(selectAll());
 
     // Retrieve all details from the pdf file.
     // $details  = $pdf->getDetails();
@@ -41,4 +42,3 @@
         'HTTP' => 200
     ]);
 ?>
-</pre>

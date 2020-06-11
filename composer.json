@@ -1,5 +1,8 @@
 {
     "require": {
         "smalot/pdfparser": "^0.15.1"
+    },
+    "require-dev": {
+        "tracy/tracy": "^2.7"
     }
 }

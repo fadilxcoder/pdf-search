@@ -4,7 +4,10 @@
 - https://database.guide/how-the-match-function-works-in-mysql/
 - https://packagist.org/packages/smalot/pdfparser
 - https://www.pdfparser.org/documentation
+- https://packagist.org/packages/tracy/tracy
 - **ADD FULLTEXT**
+- The table must be of type `InnoDB` and **NOT** MyISAM , thus the score return will be in *decimal* => More Accurate
+- - TRY THIS COMMAND : `SELECT id, title, body, MATCH (title,body)  AGAINST ('database' IN BOOLEAN MODE) AS score FROM articles ORDER BY score DESC;`
 
 # `search_modifier`
 
