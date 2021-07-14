@@ -1,4 +1,4 @@
-# Resources
+# SQL MATCH AGAINST & search in pdf
 
 - https://www.w3resource.com/mysql/mysql-full-text-search-functions.php
 - https://database.guide/how-the-match-function-works-in-mysql/
@@ -19,3 +19,41 @@
 
 
 The *default mode* is **IN NATURAL LANGUAGE MODE**.
+
+# ON DUPLICATE KEY UPDATE
+
+- Files
+- - `api-replace-data.php`
+- - `api-replace-data.sql`
+- - `functions.php`
+
+```
+    function createUpdate($tbl, $data)
+    {
+        global $connection;
+
+        foreach( array_keys($data) as $key ) 
+        {
+            $fields[] = "`$key`";
+            $values[] = "'" .$data[$key] . "'";
+        }
+        
+        $fields = implode(",", $fields);
+        $values = implode(",", $values);
+        $sql = "INSERT INTO `$tbl`($fields) VALUES ($values) ON DUPLICATE KEY UPDATE ";
+
+        unset($data['id']);
+        $sql_append = '';
+
+        foreach($data as $key => $value)
+        {
+            $sql_append .= $key."='". $value."', ";
+        }
+
+        $sql_append = rtrim($sql_append, ", ");
+        $sql = $sql . $sql_append;
+        echo '<pre>' . $sql . '</pre>';
+        $connection->query($sql);
+        return true;
+    }
+```    

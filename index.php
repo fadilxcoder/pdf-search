@@ -14,7 +14,7 @@
         'description' => $text,
     ];
 
-    //var_dump(insert('pdf_search', $arr));
+    # dump(insert('pdf_search_tbl', $arr));
     dump(selectAll());
 
     // Retrieve all details from the pdf file.
@@ -37,8 +37,4 @@
     // foreach ($pages as $page) {
     //     echo $page->getText();
     // }
-    echo json_encode([
-        'status' => 'ok',
-        'HTTP' => 200
-    ]);
 ?>

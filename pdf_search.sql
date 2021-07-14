@@ -25,21 +25,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pdf_search`
+-- Table structure for table `pdf_search_tbl`
 --
 
-DROP TABLE IF EXISTS `pdf_search`;
-CREATE TABLE `pdf_search` (
+DROP TABLE IF EXISTS `pdf_search_tbl`;
+CREATE TABLE `pdf_search_tbl` (
   `id` int(11) NOT NULL,
   `title` text NOT NULL,
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pdf_search`
+-- Dumping data for table `pdf_search_tbl`
 --
 
-INSERT INTO `pdf_search` (`id`, `title`, `description`) VALUES
+INSERT INTO `pdf_search_tbl` (`id`, `title`, `description`) VALUES
 (1, 'SQL Joins', 'An SQL JOIN clause combines rows from two or more tables. It creates a set of rows in a temporary table.'),
 (2, 'SQL Equi Join', 'SQL EQUI JOIN performs a JOIN against equality or matching column(s) values of the associated tables. An equal sign (=) is used as comparison operator in the where clause to refer equality.'),
 (3, 'SQL Left Join', 'The SQL LEFT JOIN, joins two tables and fetches rows based on a condition, which is matching in both the tables and the unmatched rows will also be available from the table before the JOIN clause.'),
@@ -62,21 +62,21 @@ INSERT INTO `pdf_search` (`id`, `title`, `description`) VALUES
 --
 
 --
--- Indexes for table `pdf_search`
+-- Indexes for table `pdf_search_tbl`
 --
-ALTER TABLE `pdf_search`
+ALTER TABLE `pdf_search_tbl`
   ADD PRIMARY KEY (`id`);
-ALTER TABLE `pdf_search` ADD FULLTEXT KEY `title` (`title`,`description`);
-ALTER TABLE `pdf_search` ADD FULLTEXT KEY `title_2` (`title`,`description`);
+ALTER TABLE `pdf_search_tbl` ADD FULLTEXT KEY `title` (`title`,`description`);
+ALTER TABLE `pdf_search_tbl` ADD FULLTEXT KEY `title_2` (`title`,`description`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `pdf_search`
+-- AUTO_INCREMENT for table `pdf_search_tbl`
 --
-ALTER TABLE `pdf_search`
+ALTER TABLE `pdf_search_tbl`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 

@@ -20,13 +20,13 @@
     {
         global $connection;
         
-        // $sql    = "SELECT * FROM pdf_search WHERE MATCH(title,description) AGAINST ('combines rows or more tables. It creates' IN NATURAL LANGUAGE MODE)";
-        // $sql    = "SELECT * FROM pdf_search WHERE MATCH(title,description) AGAINST ('combines rows from two or more tables. It creates' IN NATURAL LANGUAGE MODE WITH QUERY EXPANSION)";
-        // $sql    = "SELECT * FROM pdf_search WHERE MATCH(title,description) AGAINST ('combines + It creates'IN BOOLEAN MODE)";
+        // $sql    = "SELECT * FROM pdf_search_tbl WHERE MATCH(title,description) AGAINST ('combines rows or more tables. It creates' IN NATURAL LANGUAGE MODE)";
+        // $sql    = "SELECT * FROM pdf_search_tbl WHERE MATCH(title,description) AGAINST ('combines rows from two or more tables. It creates' IN NATURAL LANGUAGE MODE WITH QUERY EXPANSION)";
+        // $sql    = "SELECT * FROM pdf_search_tbl WHERE MATCH(title,description) AGAINST ('combines + It creates'IN BOOLEAN MODE)";
         /*
         $sql    = "
             SELECT id, title, description, MATCH(title, description) AGAINST('mysql tutorial' IN BOOLEAN MODE) AS score
-            FROM pdf_search
+            FROM pdf_search_tbl
             WHERE MATCH(title,description) AGAINST ('mysql tutorial' IN BOOLEAN MODE)
             ORDER BY score DESC
             ;
@@ -39,7 +39,7 @@
                 description, 
                 MATCH(title, description) AGAINST('mysql tutorial' IN BOOLEAN MODE) AS score,
                 CONCAT_WS(' ', id, title, description) AS whole_data
-            FROM pdf_search
+            FROM pdf_search_tbl
             ORDER BY score DESC
             ;
         ";
